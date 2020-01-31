@@ -44,6 +44,10 @@ const register = (program) => {
             for (let track of keys.tracks) {
               track['key_id'] = Buffer.from(track['key_id'], 'base64').toString('hex')
               track['key'] = Buffer.from(track['key'], 'base64').toString('hex')
+              track["pssh"].map(value => {
+                value["boxes_hex"] = Buffer.from(value["boxes"], "base64").toString("hex");
+                return value;
+              })
               decodedTracks.push(track)
             }
             keys.tracks = decodedTracks

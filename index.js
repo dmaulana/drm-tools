@@ -15,7 +15,7 @@ program.on('command:*', function () {
 program
   .description('Widevine DRM Command Line Tools')
   .usage('<command> -h for help')
-  .version('0.0.1', '-v, --version')
+  .version('0.0.2', '-v, --version')
   .parse(process.argv)
 
 // show help if no argument passes
